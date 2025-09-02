@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Edible Homes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-top: 2em;
+      color: #2d3a4b;
+    }
+    #houseName {
+      margin: 2em 0 1em;
+      font-size: 1.5em;
+      color: #4b7bec;
+      min-height: 2em;
+    }
+    button {
+      padding: 0.7em 2em;
+      background: #4b7bec;
+      color: #fff;
+      font-size: 1em;
+      border: none;
+      border-radius: 0.3em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #3867d6;
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome to Edible Homes</h1>
-  <p>This is the initial deployment of your website.</p>
+  <div id="houseName">Click the button to discover a random edible house!</div>
+  <button onclick="generateHouse()">Generate Edible House</button>
+  <script>
+    const houses = [
+      "Gingerbread Cottage",
+      "Chocolate Villa",
+      "Marshmallow Mansion",
+      "Candy Cane Castle",
+      "Licorice Lodge",
+      "Caramel Cabin",
+      "Strawberry Shortcake Studio",
+      "Peanut Butter Palace",
+      "Lemon Meringue Manor",
+      "Coconut Cream Chalet"
+    ];
+    function generateHouse() {
+      const idx = Math.floor(Math.random() * houses.length);
+      document.getElementById('houseName').textContent = houses[idx];
+    }
+  </script>
 </body>
 </html>
-
